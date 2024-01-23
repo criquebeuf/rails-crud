@@ -1,0 +1,9 @@
+- migrate:db
+create a schema.rb in the DB folder
+everytime we run a migraton it pdates the schema
+we can't touch the schema.rb
+
+- Edit the table
+rails g migration AddAddressToRestaurants
+you can add the changes
+rails g migration AddAddressToRestaurants address:string
