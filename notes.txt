@@ -1,3 +1,13 @@
+I. MIGRATION
+
+Steps:
+1. rails generate model restaurant name:string rating:integer
+or rails generate migration AddAddressToRestaurants address:string
+etc.
+THEN
+2. db:migrate (update the schema.rb automatically)
+
+
 - migrate:db
 create a schema.rb in the DB folder
 everytime we run a migraton it pdates the schema
@@ -7,3 +17,24 @@ we can't touch the schema.rb
 rails g migration AddAddressToRestaurants
 you can add the changes
 rails g migration AddAddressToRestaurants address:string
+
+II. CONSOLE
+
+cmd: rails c
+or rails c --sandbox (for a specific env.=> nothing happens to DB / will be rollbacked at exit)
+
+cmd: reload!
+will reload without exiting rails c
+
+- Create a restaurant in the CONSOLE
+- Create but NOT in the DB: dishoom = Restaurant.new(name:"dishoom", rating:3, address:"london")
+- dishoom.save
+
+See all restaurants
+Restaurant.all
+
+See how many restaurant
+Restaurant.count
+
+See first restaurant
+Restaurant.first
